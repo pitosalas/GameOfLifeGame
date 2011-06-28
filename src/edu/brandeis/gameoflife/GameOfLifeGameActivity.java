@@ -9,18 +9,17 @@ public class GameOfLifeGameActivity extends GameActivity {
 	
 	GameOfLifeGrid theGrid = new GameOfLifeGrid(20, 20);
 	
+	
     /** Called when the activity is first created. */
 	public GameOfLifeGameActivity() {
-		super(new GameOfLifeModel(), new GameOfLifeController());
+		super(new GameOfLifeModel(), new GameOfLifeController(), new GameOfLifeView());
 		getController().setModel(getModel());
+		setKeyResources(R.layout.game, R.id.game_surface);
 	}
 
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-		setKeyResources(R.layout.main, R.layout.main);
-		
-		
         super.onCreate(savedInstanceState);
     }
 }
