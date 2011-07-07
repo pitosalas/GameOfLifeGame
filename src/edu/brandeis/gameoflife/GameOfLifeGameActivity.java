@@ -14,6 +14,7 @@ public class GameOfLifeGameActivity extends GameActivity {
 	public GameOfLifeGameActivity() {
 		super(new GameOfLifeModel(), new GameOfLifeController(), new GameOfLifeView());
 		getController().setModel(getModel());
+		getView().setContext(getController(), getHolder(), getModel());
 		setKeyResources(R.layout.game, R.id.game_surface);
 	}
 
