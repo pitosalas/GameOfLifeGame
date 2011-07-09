@@ -29,15 +29,7 @@ public abstract class GameController implements OnTouchListener {
 	 * This processes all user input to the game and uses that input to update the model.
 	 * It allows the user to grab disks and squares and move them or flick them and so needs
 	 * to keep track of the currently "selected" disk or square...
-	 * @param gameModel
 	 */
-	public GameController(GameModel gameModel) {
-		setModel(gameModel);
-	}
-	
-	public GameController() {
-	}
-	
 	public void setModel(GameModel theModel) {
 		this.gameModel = theModel;
 	}
@@ -137,10 +129,9 @@ public abstract class GameController implements OnTouchListener {
 		// this is called by the model when the user wins the game!
 		if (gameModel.levelOver){
 			synchronized(gameModel){
-
-			gameModel.resetGame();
-			gameModel.createLevel(2,width,height);
-			gameModel.levelOver=false;
+				gameModel.resetGame();
+				gameModel.createLevel(2,width,height);
+				gameModel.levelOver=false;
 			}
 		}
 	}

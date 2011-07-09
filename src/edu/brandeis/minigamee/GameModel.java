@@ -25,7 +25,7 @@ public class GameModel {
 	private long dt;					// time since the last call to doDraw
 	
 	public void updateGame(long now) {
-		if (levelOver) return; // don't do anything when the game is not being played ...
+		if (levelOver) return; 			// don't do anything when the game is not being played ...
 		currTime = now;
 		if (firstEval){
 			dt=0;
@@ -36,7 +36,7 @@ public class GameModel {
 		
 		// see if the user has run out of time
 		timeRemaining = gameLength - (now - startTime)/1000f;
-		if (timeRemaining<0){
+		if (timeRemaining < 0){
 			Log.d(TAG, "GameModel::updateGame user lost due to no more time");
 			levelOver=true; 
 			userLost=true;

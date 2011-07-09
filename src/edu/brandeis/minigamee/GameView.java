@@ -75,7 +75,7 @@ public class GameView  implements Callback{
 	/**
 	 * This uses the surface holder to get a lock on the canvas,
 	 * the draws a representation of the model on the canvas (if its not null),
-	 * and finally releases the lock and posts a "draw" event to the main GUI
+	 * and finally releases the lock and posts a "draw" event to the main GUI thread
 	 * which will copy the canvas onto the screen.
 	 */
 	public void draw() {
@@ -132,7 +132,7 @@ public class GameView  implements Callback{
 		textPaint = new Paint();
 		textPaint.setColor(Color.GREEN);
 		textPaint.setAntiAlias(true);
-		textPaint.setTextSize(40);
+		textPaint.setTextSize(20);
 		
 	}
 

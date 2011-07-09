@@ -3,13 +3,6 @@ package edu.brandeis.gameoflife;
 import edu.brandeis.minigamee.*;
 
 public class GameOfLifeController extends GameController {
-	public GameOfLifeController(GameModel gameModel) {
-		super(gameModel);
-	}
-	
-	public GameOfLifeController() {
-	}
-
 	public String getLogString() {
 		return "No state defined yet!";
 	}
