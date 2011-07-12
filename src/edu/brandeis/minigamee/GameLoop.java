@@ -39,7 +39,7 @@ public class GameLoop extends Thread {
 				synchronized(view) {
 					view.draw();
 				}
-				if (!model.levelOver)
+				if (!model.isLevelOver())
 					synchronized(model){
 				     model.updateGame(System.currentTimeMillis());
 					}

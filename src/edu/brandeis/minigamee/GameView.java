@@ -30,14 +30,14 @@ public class GameView  implements Callback{
 	
 	public GameView(GameController controller,SurfaceHolder holder,GameModel model){
 		Log.d(TAG, "GameView Constructor with params");
-		reset(controller, model);
+		setContext(controller, model);
 	}
 	
 	public GameView() {
 		Log.d(TAG, "GameView Constructor without params");
 	}
 	
-	public void reset(GameController controller,GameModel model) {
+	public void setContext(GameController controller, GameModel model) {
 		Log.d(TAG, "GameView reset");
 		this.controller=controller;
 		this.model = model;
@@ -106,7 +106,7 @@ public class GameView  implements Callback{
 		controller.setSize(width, height);
 
 		c.drawRect(0, 0, width, height, backgroundPaint);
-		c.drawText("["+Math.round(model.timeRemaining)+"] win="+model.wins+" lose="+model.losses,0,50,textPaint);
+		c.drawText(model.toString(), 0, 50, textPaint);
 	}
 
 	/**
@@ -114,6 +114,10 @@ public class GameView  implements Callback{
 	 */
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		Log.d(TAG, "SurfaceDestroyed");
+		safeStop();
+	}
+	
+	public void safeStop() {
 		try {
 			gameLoop.safeStop();
 		} finally {

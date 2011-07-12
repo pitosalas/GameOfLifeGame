@@ -34,8 +34,8 @@ public class GameActivity extends Activity {
 		model = theMod;
 		controller = theCont;
 		view = theView;
-		controller.setModel(model);
-		view.reset(controller, model);
+		controller.setContext(model, view);
+		view.setContext(controller, model);
 
 	}
 	

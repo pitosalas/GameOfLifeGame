@@ -19,6 +19,7 @@ import android.util.Log;
 public abstract class GameController implements OnTouchListener {
 
 	protected GameModel gameModel;
+	protected GameView gameView;
 	private int width, height;
 	private float zoom=1.0f; // this doesn't seem to work correctly with zoom != 1f
 	private final static String TAG="MGE";
@@ -30,8 +31,9 @@ public abstract class GameController implements OnTouchListener {
 	 * It allows the user to grab disks and squares and move them or flick them and so needs
 	 * to keep track of the currently "selected" disk or square...
 	 */
-	public void setModel(GameModel theModel) {
-		this.gameModel = theModel;
+	public void setContext(GameModel theModel, GameView theView) {
+		gameModel = theModel;
+		gameView = theView;
 	}
 
 	/**
@@ -56,7 +58,7 @@ public abstract class GameController implements OnTouchListener {
 	
 	
 	/**
-	 * Convert PointF p from Model coordinats to View Coordinates
+	 * Convert PointF p from Model coordinates to View Coordinates
 	 * @param p
 	 * @return q
 	 */
@@ -118,21 +120,13 @@ public abstract class GameController implements OnTouchListener {
 	public void touch_move(float x, float y) {
 		Log.d(TAG, "GameControler::touch_move (x,y) = " + x + ", " + y);
 	}
-	
-	
+
 	/**
 	 * this is called from the GameLoop when it polls the model and detects that the game is over.
 	 * It resets the game and creates a new level. Another possibility would be to go to a level completed activity....
 	 * but we don't do that yet...
 	 */
 	public void levelOver(){
-		// this is called by the model when the user wins the game!
-		if (gameModel.levelOver){
-			synchronized(gameModel){
-				gameModel.resetGame();
-				gameModel.createLevel(2,width,height);
-				gameModel.levelOver=false;
-			}
-		}
+		gameView.safeStop();
 	}
 }
