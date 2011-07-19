@@ -13,6 +13,4 @@ public class GameOfLifeController extends GameController {
 	public void touch_up(float x, float y) {
 		Log.d(TAG, "GameOfLifeController: touch_up");
 	}
-
-
 }

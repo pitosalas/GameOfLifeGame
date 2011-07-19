@@ -35,7 +35,7 @@ public class GameLoop extends Thread {
 	public void run() {
 		while (running) {
 			try {
-				TimeUnit.MILLISECONDS.sleep(10);
+				TimeUnit.MILLISECONDS.sleep(GameConfig.get().getGameLoopSleepMS());
 				synchronized(view) {
 					view.draw();
 				}

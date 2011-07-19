@@ -53,10 +53,8 @@ public class GameView  implements Callback{
 	 * When the drawing surface size changes we need to tell the controller so it
 	 * can adjust the mapping between the view and the model
 	 */
-	public void surfaceChanged(SurfaceHolder holder, int format, int width,
-			int height) {
+	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 		controller.setSize(width, height);
-
 	}
 		
 	/**
@@ -95,10 +93,10 @@ public class GameView  implements Callback{
 		}
 	}
 
-	/*
-	 * The drawing method simply draws the disks, squares, and targets
-	 * after it paints the entire screen with the background color.
-	 */
+/**
+ * The drawing method paints the entire screen with the background color
+ * and then simply draws the elements of the model as they should look right now.
+ */
 	private void doDraw(Canvas c) {
 		Log.d(TAG, "doDraw");
 		int width = c.getWidth();
@@ -109,9 +107,9 @@ public class GameView  implements Callback{
 		c.drawText(model.toString(), 0, 50, textPaint);
 	}
 
-	/**
-	 * When the surface is destroyed we stop the game loop
-	 */
+/**
+ * When the surface is destroyed we stop the game loop
+ */
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		Log.d(TAG, "SurfaceDestroyed");
 		safeStop();

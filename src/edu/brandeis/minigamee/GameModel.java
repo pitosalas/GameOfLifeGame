@@ -36,10 +36,10 @@ public abstract class GameModel {
 		return true;
 	}
 	
-/** String showing state of model 
+/** String showing state of model. 
  * 
  */
 	public String toString() {
-		return "GameModel: time="+currTime;
+		return "GameModel: time=" + currTime;
 	}
 }
