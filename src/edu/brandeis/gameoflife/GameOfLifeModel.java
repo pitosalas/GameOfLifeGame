@@ -19,8 +19,10 @@ public class GameOfLifeModel extends GameModel {
 		super.updateGame(now);
 		timeRemaining = gameLength - (now - startTime)/1000f;
 	}
-
+@Override
 	public boolean isLevelOver() {
-		return timeRemaining < 0;
+		super.isLevelOver();
+		Log.d(TAG, "GameModel.isLevelOver, timeRemaining = " + String.valueOf(timeRemaining));
+		return timeRemaining < 0.0;
 	}
 }

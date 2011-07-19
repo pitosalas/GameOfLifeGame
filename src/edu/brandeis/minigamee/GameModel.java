@@ -17,11 +17,12 @@ public abstract class GameModel {
 	private long currTime;				// current time that the updateGame method is called
 	
 // Abstracted leveling facility:
-// Levels are numbered 0 and up as integers
-// When a level is over for whatever reason, the levelOver becomes true
-	private boolean firstEval=true; 	// true if this is the first time updateGame starting app
-	private int level=0;				// We always start at level = 0
-	private boolean levelOver=false;
+// 	Levels are numbered 0 and up as integers
+//  When a level is over for whatever reason, the levelOver becomes true
+	
+	private boolean firstEval = true; 	// true if this is the first time updateGame starting app
+	private int level = 0;				// We always start at level = 0
+	private boolean levelOver = false;
 
 	
 	public void updateGame(long now) {
@@ -35,12 +36,12 @@ public abstract class GameModel {
 		}
     }
 
-
 /** A game goes for one level. Upleveling happens when the model is reset for the
  * next level and then begins again.
  * @return true if level is over.
  */
 	public boolean isLevelOver() {
+		Log.d(TAG, "GameModel: isLevelOver()");
 		return levelOver;
 	}
 	

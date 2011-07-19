@@ -58,11 +58,12 @@ public class GameView  implements Callback{
 	}
 		
 	/**
-	 *  When the drawing surface is created we start up a game loop,
+	 *  When the drawing surface is created we can start up a game loop,
 	 *  the game loop just draws the scene and updates the model in an infinite loop
 	 *  running in a separate thread. We create the thread and start it up here ...
 	 */
 	public void surfaceCreated(SurfaceHolder holder) {
+		Log.d(TAG, "Gameview: surfaceCreated");
 		if (gameLoop == null) {
 			gameLoop = new GameLoop(this, model, controller);
 			model.resetGame();
