@@ -126,7 +126,7 @@ public abstract class GameController implements OnTouchListener {
 	 * It resets the game and creates a new level. Another possibility would be to go to a level completed activity....
 	 * but we don't do that yet...
 	 */
-	public void levelOver(){
+	public void levelOver() {
 		gameView.safeStop();
 	}
 }

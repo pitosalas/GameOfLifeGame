@@ -64,7 +64,8 @@ public class GameView  implements Callback{
 	 */
 	public void surfaceCreated(SurfaceHolder holder) {
 		if (gameLoop == null) {
-			gameLoop = new GameLoop(this,model,controller);
+			gameLoop = new GameLoop(this, model, controller);
+			model.resetGame();
 			gameLoop.start();
 		}
 

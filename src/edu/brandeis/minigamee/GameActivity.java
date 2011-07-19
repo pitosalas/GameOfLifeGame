@@ -39,17 +39,9 @@ public class GameActivity extends Activity {
 
 	}
 	
-	public GameModel getModel() {
-		return model;
-	}
-	
-	public GameController getController() {
-		return controller;
-	}
-	
-	public GameView getView() {
-		return view;
-	}
+	public GameModel getModel() { return model; }
+	public GameController getController() { return controller; }
+	public GameView getView() { return view; }
 
 	public void setKeyResources(int aGameView, int aSurfaceView) {
 		this.gameViewId = aGameView;
@@ -90,9 +82,5 @@ public class GameActivity extends Activity {
 		super.onResume();
 		// model.onResume(this);
 	}
-
-	
-
-
 
 }
