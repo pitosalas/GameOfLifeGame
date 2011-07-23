@@ -119,7 +119,11 @@ public class GameView  implements Callback{
 	
 	public void safeStop() {
 		try {
-			gameLoop.safeStop();
+			if (!(gameLoop == null)) {
+				gameLoop.safeStop();
+			} else {
+				Log.e(TAG, "safeStop seems to have been called with nul gameloop");
+			}
 		} finally {
 			gameLoop = null;
 		}
@@ -137,7 +141,6 @@ public class GameView  implements Callback{
 		textPaint.setColor(Color.GREEN);
 		textPaint.setAntiAlias(true);
 		textPaint.setTextSize(20);
-		
 	}
 
 	

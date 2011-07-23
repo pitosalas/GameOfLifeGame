@@ -15,7 +15,7 @@ public class GameConfig {
  * 
  */
 	private GameConfig() {
-		gameLoopSleepMs = 10;
+		gameLoopSleepMs = 200;
 	}
 	public static GameConfig get() {
 		if(instance == null) {
