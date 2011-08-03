@@ -19,7 +19,6 @@ public class GameOfLifeModel extends GameModel {
 		gameLength = 60.0f;
 		timeRemaining = gameLength;
 		startTime = System.currentTimeMillis();
-
 	}
 	
 	public void updateGame(long now) {
